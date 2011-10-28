@@ -19,6 +19,7 @@ namespace WumpusAgentGame
         public int posX;
         public int posY;
         public bool allVisible = false;
+        public bool autoPlay = false;  // dmc
 
         public int wumpus;
         public int gold;
@@ -79,7 +80,14 @@ namespace WumpusAgentGame
         private void chkVisible_CheckedChanged(object sender, EventArgs e)
         {
             if (chkVisible.Checked) allVisible = true;
-            else allVisible = false;
+			else allVisible = false;  
         }
+
+        private void chkAutoPlay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAutoPlay.Checked) autoPlay = true;
+            else autoPlay = false;
+        }
+       
     }
 }

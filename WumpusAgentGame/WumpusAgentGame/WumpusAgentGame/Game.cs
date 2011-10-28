@@ -13,7 +13,7 @@ using WumpusAgentGame.Entities;
 
 namespace WumpusAgentGame
 {
-    class Game
+    class Game   //  singleton dmc
     {
         //XNA Content Manager
         private ContentManager _content;
@@ -48,9 +48,40 @@ namespace WumpusAgentGame
         //Fonts (not used yet)
         SpriteFont header1;
 
+		// make a static   
+		private static Game instance;
+		private Game() { }
 
+        // dmc
+      
+
+        public bool AutoPlay
+        {
+            get { return settingMenu.autoPlay; }
+            set { settingMenu.autoPlay = value; }
+        }
+        
+
+		public static Game Instance
+		{
+
+			get
+			{
+				if (instance == null)
+				{
+					instance = new Game();
+				}
+				return instance;
+			}
+			
+		}
+
+			
+		
         public Game(Settings setmenu, ContentManager cm, int x, int y)
         {
+			
+
             settingMenu = setmenu;
             _content = cm;
             boardX = x;
@@ -62,8 +93,11 @@ namespace WumpusAgentGame
 
             mBoard = new Tile[x, y];
             entityMap = new Entity[x, y];
+			instance = this;
 
         }
+
+		
 
         public void LoadGame()
         {
@@ -84,6 +118,7 @@ namespace WumpusAgentGame
             //Loads the Board
             Sprite mRoom = new Sprite();
             bool visible = settingMenu.allVisible;
+            bool autoPlay = settingMenu.autoPlay;
             Random rand = new Random(settingMenu.seed);
 
             //Gets the # of pits, wumpus, and gold
@@ -181,22 +216,31 @@ namespace WumpusAgentGame
             //Checks if a player is between tiles, currently also manages if a player is moving into a tile that they would die in
             if (_player.isBetweenTiles())
             {
-                mBoard[(int)_player.DestinationX,_player.DestinationY]._explored = true;
-                if (entityMap[(int)_player.DestinationX, _player.DestinationY] != null && _player.goingToDie == false)
-                {
-                    entityMap[(int)_player.DestinationX, _player.DestinationY].visible = true;
-                    if (entityMap[(int)_player.DestinationX, _player.DestinationY].Kill == true)
-                    {
-                        _player.goingToDie = true;
-                        if (entityMap[(int)_player.DestinationX, _player.DestinationY].ENTITY_ASSETNAME == "Wumpus")
-                        {
-                            _player.playerLog.Add("Player Killed by Wumpus!");
-                        }
-                        else _player.playerLog.Add("Player killed by Pit!");
-                        _player.listUpdated = true;
-                        _player.Score = 0;
-                    }
-                }
+				try
+				{
+					mBoard[(int)_player.DestinationX, _player.DestinationY]._explored = true;
+					if (entityMap[(int)_player.DestinationX, _player.DestinationY] != null && _player.goingToDie == false)
+					{
+						entityMap[(int)_player.DestinationX, _player.DestinationY].visible = true;
+						if (entityMap[(int)_player.DestinationX, _player.DestinationY].Kill == true)
+						{
+							_player.goingToDie = true;
+							if (entityMap[(int)_player.DestinationX, _player.DestinationY].ENTITY_ASSETNAME == "Wumpus")
+							{
+								_player.playerLog.Add("Player Killed by Wumpus!");
+							}
+							else _player.playerLog.Add("Player killed by Pit!");
+							_player.listUpdated = true;
+							_player.Score = 0;
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					_player.playerLog.Add("Error: " + ex.Message);
+				}
+				
+
             }
             //If the player fired an arrow, check which direction it was fired, then check if a wumpus was
             // within 5ish blocks in that direction (might make an infinite arrow range option later, on larger maps it could make searching
@@ -287,12 +331,19 @@ namespace WumpusAgentGame
             {
                 for (int y = viewY; y < viewY + SCREEN; y++)
                 {
-                    //Draws the Tiles
-                    mBoard[x, y].DrawTile(sb);
-                    //Draws the entities (needs a lighting fix?)
-                    if (entityMap[x,y] != null) entityMap[x, y].DrawEntity(sb);
-                    //Draws the tile effects
-                    mBoard[x, y].DrawEffect(sb);
+					try
+					{
+						//Draws the Tiles
+						mBoard[x, y].DrawTile(sb);
+						//Draws the entities (needs a lighting fix?)
+						if (entityMap[x, y] != null) entityMap[x, y].DrawEntity(sb);
+						//Draws the tile effects
+						mBoard[x, y].DrawEffect(sb);
+					}
+					catch (Exception ex) // try catch dmc
+					{
+						_player.playerLog.Add("Error:  " + ex.Message);
+					}
                 }
             }
             //Draws the Player
@@ -319,7 +370,14 @@ namespace WumpusAgentGame
                 {
                     _bright = Math.Abs(10 - (Math.Abs(x - i) + Math.Abs(y - j)));
                     if (_bright < 0 || _bright > 20) _bright = 0;
-                    mBoard[i + viewX, j + viewY].Brightness = _bright;
+					try
+					{
+						mBoard[i + viewX, j + viewY].Brightness = _bright;
+					}
+					catch (Exception ex)  // try catch added dmc
+					{
+						_player.playerLog.Add("Error in calc brightness:  " + ex.Message);
+					}
                 }
             }
         }
@@ -374,5 +432,73 @@ namespace WumpusAgentGame
             }
         }
 
-    }
+		// dmc - add error checking / walls....
+		public List<Tile> GetNeighbors(Tile curTile)
+		{
+			var lst = new List<Tile>();
+			Tile t;
+
+			if (curTile._posX == 0)
+			{
+				t = mBoard[curTile._posX + 1, curTile._posY];
+				lst.Add(t);
+			}
+			else if (curTile._posX == this.boardX - 1)
+			{
+				t = mBoard[curTile._posX - 1, curTile._posY];
+				lst.Add(t);
+			}
+			else
+			{
+				t = mBoard[curTile._posX + 1, curTile._posY];
+				lst.Add(t);
+				t = mBoard[curTile._posX - 1, curTile._posY];
+				lst.Add(t);
+			}
+			if (curTile._posY == 0)
+			{
+				t = mBoard[curTile._posX, curTile._posY + 1];
+				lst.Add(t);
+			}
+			else if (curTile._posY == this.boardY - 1)
+			{
+				t = mBoard[curTile._posX , curTile._posY-1];
+				lst.Add(t);
+			}
+			else
+			{
+				t = mBoard[curTile._posX, curTile._posY + 1];
+				lst.Add(t);
+				t = mBoard[curTile._posX, curTile._posY - 1];
+				lst.Add(t);
+			}
+
+
+			
+			return lst;
+		}
+
+
+		public Tile GetTile(int x, int y) 
+		{
+			return mBoard[x, y];
+		}
+
+        /// <summary>
+        /// Get the action given the start tile and the end tile.
+        /// </summary>
+        /// <param name="startTile"></param>
+        /// <param name="endTile"></param>
+        /// <returns></returns>
+		internal Action GetAction(Tile startTile, Tile endTile)
+		{
+			Action a = new Action();
+			if (startTile._posX > endTile._posX) { a.CurrentCommand = Action.Command.Left; }
+			else if (startTile._posX < endTile._posX) { a.CurrentCommand = Action.Command.Right; }
+			else if (startTile._posY > endTile._posY) { a.CurrentCommand = Action.Command.Up; }
+			else if  (startTile._posY < endTile._posY) { a.CurrentCommand = Action.Command.Down; }
+			return a;
+
+		}
+	}
 }

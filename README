@@ -11,3 +11,9 @@ It is hosted on Github at https://github.com/ksucase/730_Project
 For help setting up Git on Windows, see http://help.github.com/win-set-up-git/
 
 ======================================================================================
+
+This version includes a draft of an agent that successfully uses a A* search
+to get from the starting point to a given exit 5 tiles up and to the right.
+
+It calculates the path, but it needs to be updated so it will only display 
+a step at a time.

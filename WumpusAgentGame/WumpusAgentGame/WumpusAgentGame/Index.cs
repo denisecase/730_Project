@@ -14,7 +14,7 @@ namespace WumpusAgentGame
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Index : Microsoft.Xna.Framework.Game
+    public class Index : Microsoft.Xna.Framework.Game  
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;

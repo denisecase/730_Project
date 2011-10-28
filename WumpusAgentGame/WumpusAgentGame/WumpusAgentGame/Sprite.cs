@@ -41,5 +41,20 @@ namespace WumpusAgentGame
         {
             Position += theDirection * theSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
         }
+        public void Update(GameTime theGameTime, Vector2 theSpeed, Vector2 theDirection, int step)
+        {
+            double millisecondsPerFrame = 2000; //Update every 2 seconds
+            double timeSinceLastUpdate = 0; //Accumulate the elapsed time
+
+            timeSinceLastUpdate += theGameTime.ElapsedGameTime.TotalMilliseconds;
+            if(timeSinceLastUpdate >= millisecondsPerFrame)
+            {
+                 timeSinceLastUpdate = 0;
+
+                   Position += theDirection * theSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
+            }
+          
+        }
+
     }
 }

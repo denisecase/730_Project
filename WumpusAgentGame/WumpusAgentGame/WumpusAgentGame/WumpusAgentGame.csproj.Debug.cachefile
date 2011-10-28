@@ -1,5 +1,3 @@
-Content\RoomTile.xnb
-Content\Player.xnb
 Content\RoomTileBot.xnb
 Content\RoomTileLeft.xnb
 Content\RoomTileLeftBot.xnb
@@ -8,9 +6,11 @@ Content\RoomTileRightBot.xnb
 Content\RoomTileTop.xnb
 Content\RoomTileLeftTop.xnb
 Content\RoomTileRightTop.xnb
+Content\RoomTile.xnb
 Content\Pit.xnb
 Content\Treasure.xnb
-Content\Wumpus.xnb
 Content\Breeze.xnb
 Content\Stench.xnb
+Content\Player.xnb
+Content\Wumpus.xnb
 Content\Header1.xnb

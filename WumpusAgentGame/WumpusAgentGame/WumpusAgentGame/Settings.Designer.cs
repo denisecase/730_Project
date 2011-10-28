@@ -37,17 +37,18 @@
             this.rdoMed = new System.Windows.Forms.RadioButton();
             this.rdoSmall = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkVisible = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtWumpus = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtGold = new System.Windows.Forms.TextBox();
-            this.txtpitLower = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtpitHigher = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtpitHigher = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtpitLower = new System.Windows.Forms.TextBox();
+            this.txtGold = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtWumpus = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chkVisible = new System.Windows.Forms.CheckBox();
             this.txtSeed = new System.Windows.Forms.TextBox();
             this.SEED = new System.Windows.Forms.Label();
+            this.chkAutoPlay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,6 +141,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkAutoPlay);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtpitHigher);
             this.groupBox2.Controls.Add(this.label3);
@@ -156,70 +158,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Advanced Options";
             // 
-            // chkVisible
+            // label4
             // 
-            this.chkVisible.AutoSize = true;
-            this.chkVisible.Location = new System.Drawing.Point(6, 19);
-            this.chkVisible.Name = "chkVisible";
-            this.chkVisible.Size = new System.Drawing.Size(70, 17);
-            this.chkVisible.TabIndex = 6;
-            this.chkVisible.Text = "All Visible";
-            this.chkVisible.UseVisualStyleBackColor = true;
-            this.chkVisible.CheckedChanged += new System.EventHandler(this.chkVisible_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Wumpus\'";
-            // 
-            // txtWumpus
-            // 
-            this.txtWumpus.Location = new System.Drawing.Point(6, 42);
-            this.txtWumpus.Name = "txtWumpus";
-            this.txtWumpus.Size = new System.Drawing.Size(40, 20);
-            this.txtWumpus.TabIndex = 6;
-            this.txtWumpus.Text = "1";
-            this.txtWumpus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Gold";
-            // 
-            // txtGold
-            // 
-            this.txtGold.Location = new System.Drawing.Point(6, 68);
-            this.txtGold.Name = "txtGold";
-            this.txtGold.Size = new System.Drawing.Size(40, 20);
-            this.txtGold.TabIndex = 8;
-            this.txtGold.Text = "1";
-            this.txtGold.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtpitLower
-            // 
-            this.txtpitLower.Location = new System.Drawing.Point(6, 94);
-            this.txtpitLower.Name = "txtpitLower";
-            this.txtpitLower.Size = new System.Drawing.Size(40, 20);
-            this.txtpitLower.TabIndex = 9;
-            this.txtpitLower.Text = "12";
-            this.txtpitLower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "% to";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(131, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "% Pits";
             // 
             // txtpitHigher
             // 
@@ -230,14 +176,70 @@
             this.txtpitHigher.Text = "25";
             this.txtpitHigher.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(131, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "% Pits";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(52, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "% to";
+            // 
+            // txtpitLower
+            // 
+            this.txtpitLower.Location = new System.Drawing.Point(6, 94);
+            this.txtpitLower.Name = "txtpitLower";
+            this.txtpitLower.Size = new System.Drawing.Size(40, 20);
+            this.txtpitLower.TabIndex = 9;
+            this.txtpitLower.Text = "12";
+            this.txtpitLower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtGold
+            // 
+            this.txtGold.Location = new System.Drawing.Point(6, 68);
+            this.txtGold.Name = "txtGold";
+            this.txtGold.Size = new System.Drawing.Size(40, 20);
+            this.txtGold.TabIndex = 8;
+            this.txtGold.Text = "1";
+            this.txtGold.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(52, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Gold";
+            // 
+            // txtWumpus
+            // 
+            this.txtWumpus.Location = new System.Drawing.Point(6, 42);
+            this.txtWumpus.Name = "txtWumpus";
+            this.txtWumpus.Size = new System.Drawing.Size(40, 20);
+            this.txtWumpus.TabIndex = 6;
+            this.txtWumpus.Text = "1";
+            this.txtWumpus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Wumpus\'";
+            // 
+            // chkVisible
+            // 
+            this.chkVisible.AutoSize = true;
+            this.chkVisible.Location = new System.Drawing.Point(6, 19);
+            this.chkVisible.Name = "chkVisible";
+            this.chkVisible.Size = new System.Drawing.Size(70, 17);
+            this.chkVisible.TabIndex = 6;
+            this.chkVisible.Text = "All Visible";
+            this.chkVisible.UseVisualStyleBackColor = true;
+            this.chkVisible.CheckedChanged += new System.EventHandler(this.chkVisible_CheckedChanged);
             // 
             // txtSeed
             // 
@@ -255,6 +257,17 @@
             this.SEED.Size = new System.Drawing.Size(36, 13);
             this.SEED.TabIndex = 13;
             this.SEED.Text = "SEED";
+            // 
+            // chkAutoPlay
+            // 
+            this.chkAutoPlay.AutoSize = true;
+            this.chkAutoPlay.Location = new System.Drawing.Point(82, 19);
+            this.chkAutoPlay.Name = "chkAutoPlay";
+            this.chkAutoPlay.Size = new System.Drawing.Size(71, 17);
+            this.chkAutoPlay.TabIndex = 13;
+            this.chkAutoPlay.Text = "Auto Play";
+            this.chkAutoPlay.UseVisualStyleBackColor = true;
+            this.chkAutoPlay.CheckedChanged += new System.EventHandler(this.chkAutoPlay_CheckedChanged);
             // 
             // Settings
             // 
@@ -302,5 +315,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSeed;
         private System.Windows.Forms.Label SEED;
+        private System.Windows.Forms.CheckBox chkAutoPlay;
     }
 }
