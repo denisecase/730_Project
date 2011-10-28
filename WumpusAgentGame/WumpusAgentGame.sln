@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusAgentGame", "WumpusAgentGame\WumpusAgentGame\WumpusAgentGame.csproj", "{39F884D1-01AD-4687-B92E-05D2C6623E00}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WumpusAgentGameContent", "WumpusAgentGame\WumpusAgentGameContent\WumpusAgentGameContent.contentproj", "{DD27F82D-8017-4710-828D-561488E8EB3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39F884D1-01AD-4687-B92E-05D2C6623E00}.Debug|x86.ActiveCfg = Debug|x86
+		{39F884D1-01AD-4687-B92E-05D2C6623E00}.Debug|x86.Build.0 = Debug|x86
+		{39F884D1-01AD-4687-B92E-05D2C6623E00}.Release|x86.ActiveCfg = Release|x86
+		{39F884D1-01AD-4687-B92E-05D2C6623E00}.Release|x86.Build.0 = Release|x86
+		{DD27F82D-8017-4710-828D-561488E8EB3F}.Debug|x86.ActiveCfg = Debug|x86
+		{DD27F82D-8017-4710-828D-561488E8EB3F}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
