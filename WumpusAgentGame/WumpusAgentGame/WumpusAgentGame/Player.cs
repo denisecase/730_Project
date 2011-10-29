@@ -42,6 +42,7 @@ namespace WumpusAgentGame
         //Log
         public List<string> playerLog;
         public bool listUpdated = false;
+        public string playerLoc;
 
         //Win or Lose
         public bool goingToDie = false;
@@ -131,15 +132,13 @@ namespace WumpusAgentGame
                 playerLog.Add("Goal x is " + GOALX);
                 playerLog.Add("Goal y is " + GOALY);
                 
-                var actions = new List<Action>();
-
                 CurrentState = State.Stopped;
 
-                // get the action sequence
-				actions = AI.AStarSearchForGoal(curTile, exitTile, this, theGameTime);
-
+                // get the action sequence - still working on it...
+				var actions = AI.AStarSearchForGoal(curTile, exitTile, this, theGameTime);
                 if (actions == null) return;
 
+                // dmc - created temporaray list of two actions (1) None then (2) Right to work on display
                 var acts =new List<Action>();
                 acts.Add(actions[0]);
                 acts.Add(actions[1]);
@@ -151,13 +150,10 @@ namespace WumpusAgentGame
                     playerLog.Add("Step " + count++ + ": " + a.CurrentCommand.ToString());
                 }
 
-                foreach (Action a in acts)   
+                foreach (Action a in acts)   // change to real action list when working
                 {
-                    
+                    playerLog.Add("Step " + count++ + ": " + a.CurrentCommand.ToString());
                     CurrentState = State.Stopped;  //dmc
-                    destPosX = 1;
-                    destPosY = 1;
-                    
                     if (a.CurrentCommand == Action.Command.Climb && escaped == false)
                     {
                         escaped = true;
@@ -169,10 +165,11 @@ namespace WumpusAgentGame
                     {
                         picking_up = true;
                     }
-                    UpdateMovement(a);
-                     base.Update(theGameTime, Speed, Direction, 1);  // hmm....
-                     if (CurrentState == State.Firing) shootArrow(a);
+                     UpdateMovement(a);
+                    // base.Update(theGameTime, Speed, Direction, 1);  // hmm....
+                    // if (CurrentState == State.Firing) shootArrow(a);
                     lastAction = a;
+
                 }
 				//mPreviousKeyboardState = aCurrentKeyboardState;
 			}
@@ -182,6 +179,8 @@ namespace WumpusAgentGame
         //Updates the Movement
         public void UpdateMovement(Action curAction)
         {
+            playerLoc = "Player location (" + Position.X + "," + Position.Y + ")";
+           
             //If Moving, check to see if at destination
             if (CurrentState == State.Walking)
             {
@@ -245,20 +244,21 @@ namespace WumpusAgentGame
                     }
                 }
             }
-            //If Stopped, Do X
+         
             if (CurrentState == State.Stopped)
             {
-                if (curAction.CurrentCommand == Action.Command.Left)
+                var tile = Game.Instance.GetTile(posX, posY);
+              // playerLog.Add("Getting tile information for posX, poxY = " + posX + "," + posY);
+             
+               if (curAction.CurrentCommand == Action.Command.Left)
                 {
-                    Speed.X = PLAYER_SPEED;
+                     Speed.X = PLAYER_SPEED;
                     Direction.X = MOVE_LEFT;
-					// dmc
-					if (Position.X < 1)
-					{
-						CurrentState = State.Walking;
-						playerLog.Add("Player attempted to move LEFT but couldn't");
-						listUpdated = true;
-					}
+                   if(tile._isLeftWall)
+                    {
+                        CurrentState = State.Walking;
+                        listUpdated = true;
+                    }
 					else
 					{
 						destPosX += MOVE_LEFT;
@@ -272,11 +272,9 @@ namespace WumpusAgentGame
                 {
                     Speed.X = PLAYER_SPEED;
                     Direction.X = MOVE_RIGHT;
-					// dmc
-					if (Position.X >= 400)
+                    if(tile._isRightWall)
 					{
 						CurrentState = State.Walking;
-						playerLog.Add("Player attempted to move RIGHT but couldn't");
 						listUpdated = true;
 					}
 					else
@@ -292,12 +290,10 @@ namespace WumpusAgentGame
                 {
                     Speed.Y = PLAYER_SPEED;
                     Direction.Y = MOVE_UP;
-					// dmc
-					if (Position.Y <= 1)
+                    if(tile._isTopWall)
 					{
 						CurrentState = State.Walking;
-						playerLog.Add("Player attempted to move UP but couldn't");
-						listUpdated = true;
+ 						listUpdated = true;
 					}
 					else
 					{
@@ -312,20 +308,16 @@ namespace WumpusAgentGame
                 {
                     Speed.Y = PLAYER_SPEED;
                     Direction.Y = MOVE_DOWN;
-					
-					// dmc
-					if (Position.Y >=400) 
+		            if(tile._isBottomWall)
 					{
 						CurrentState = State.Walking;
-						playerLog.Add("Player attempted to move DOWN but couldn't");
-						listUpdated = true;
+  						listUpdated = true;
 					}
 					else
 					{
 	                destPosY += MOVE_DOWN;
                     CurrentState = State.Walking;
-                    playerLog.Add("Player moved DOWN");
-                    listUpdated = true;
+                     listUpdated = true;
                     Score--;
 					}
                 }

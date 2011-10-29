@@ -41,5 +41,12 @@ namespace WumpusAgentGame
         {
             lblScore.Text = Convert.ToString(i);
         }
+
+        public void SetStatus(string s)
+        {
+            txtStatus.Text = s;
+        }
+
+       
     }
 }

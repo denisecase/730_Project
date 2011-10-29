@@ -18,6 +18,10 @@ namespace WumpusAgentGame
 
         public bool _stench = false;
         public bool _breeze = false;
+        public bool _isTopWall = false;
+        public bool _isBottomWall = false;
+        public bool _isRightWall = false;
+        public bool _isLeftWall = false;
         private Sprite stenchSprite;
         private Sprite breezeSprite;
 
@@ -33,9 +37,22 @@ namespace WumpusAgentGame
             breezeSprite = new Sprite();
         }
 
+        public Tile(int x, int y, bool vis, bool top, bool bottom, bool right, bool left)
+        {
+            _posX = x;
+            _posY = y;
+            _isTopWall = top;
+            _isBottomWall = bottom;
+            _isRightWall = right;
+            _isLeftWall = left;
+            _explored = vis;
+            stenchSprite = new Sprite();
+            breezeSprite = new Sprite();
+        }
+
         public void LoadContent(ContentManager theContentManager, string theAssetName)
         {
-            Position = new Vector2(_posX*100, _posY*100);
+            Position = new Vector2(_posX * 100, _posY * 100);
             base.LoadContent(theContentManager, theAssetName);
             stenchSprite.LoadContent(theContentManager, "Stench");
             breezeSprite.LoadContent(theContentManager, "Breeze");
@@ -76,7 +93,7 @@ namespace WumpusAgentGame
             Color _tint = Color.Black;
             if (_explored == true)
             {
-                _tint = new Color((int)(50 + _brightness * 20),(int)(50 + _brightness * 20),(int)(50 + _brightness * 20));
+                _tint = new Color((int)(50 + _brightness * 20), (int)(50 + _brightness * 20), (int)(50 + _brightness * 20));
             }
             return _tint;
         }
@@ -86,5 +103,6 @@ namespace WumpusAgentGame
             get { return _brightness; }
             set { _brightness = value; }
         }
+        
     }
 }

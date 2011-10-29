@@ -24,29 +24,3 @@ C:\Users\Joel\documents\visual studio 2010\Projects\WumpusAgentGame\WumpusAgentG
 C:\Users\Joel\documents\visual studio 2010\Projects\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Stench.xnb
 C:\Users\Joel\Documents\Visual Studio 2010\Projects\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Header1.xnb
 C:\Users\Joel\Documents\Visual Studio 2010\Projects\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\WumpusAgentGame.GameControl.resources
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileBot.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileLeft.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileLeftBot.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileRight.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileRightBot.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileTop.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileLeftTop.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTileRightTop.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\RoomTile.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Pit.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Treasure.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Breeze.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Stench.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Player.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Wumpus.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\Content\Header1.xnb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\WumpusAgentGame.exe
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\bin\x86\Debug\WumpusAgentGame.pdb
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\WumpusAgentGame.GameControl.resources
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\WumpusAgentGame.Settings.resources
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\WumpusAgentGame.exe
-C:\Users\Denise\GitHub\730_Project\WumpusAgentGame\WumpusAgentGame\WumpusAgentGame\obj\x86\Debug\WumpusAgentGame.pdb

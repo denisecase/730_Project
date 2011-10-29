@@ -37,6 +37,7 @@
             this.rdoMed = new System.Windows.Forms.RadioButton();
             this.rdoSmall = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkAutoPlay = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtpitHigher = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.chkVisible = new System.Windows.Forms.CheckBox();
             this.txtSeed = new System.Windows.Forms.TextBox();
             this.SEED = new System.Windows.Forms.Label();
-            this.chkAutoPlay = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -56,7 +56,8 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(698, 430);
+            this.btnPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlay.Location = new System.Drawing.Point(676, 431);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(75, 23);
             this.btnPlay.TabIndex = 0;
@@ -76,14 +77,18 @@
             // 
             // picTitle
             // 
+            this.picTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picTitle.Location = new System.Drawing.Point(12, 12);
             this.picTitle.Name = "picTitle";
-            this.picTitle.Size = new System.Drawing.Size(761, 146);
+            this.picTitle.Size = new System.Drawing.Size(739, 146);
             this.picTitle.TabIndex = 3;
             this.picTitle.TabStop = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtXY);
             this.groupBox1.Controls.Add(this.rdoCustom);
             this.groupBox1.Controls.Add(this.rdoLarge);
@@ -91,7 +96,7 @@
             this.groupBox1.Controls.Add(this.rdoSmall);
             this.groupBox1.Location = new System.Drawing.Point(12, 164);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(761, 121);
+            this.groupBox1.Size = new System.Drawing.Size(739, 121);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Game Settings";
@@ -141,6 +146,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.chkAutoPlay);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtpitHigher);
@@ -153,10 +160,21 @@
             this.groupBox2.Controls.Add(this.chkVisible);
             this.groupBox2.Location = new System.Drawing.Point(12, 291);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(761, 121);
+            this.groupBox2.Size = new System.Drawing.Size(739, 121);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Advanced Options";
+            // 
+            // chkAutoPlay
+            // 
+            this.chkAutoPlay.AutoSize = true;
+            this.chkAutoPlay.Location = new System.Drawing.Point(82, 19);
+            this.chkAutoPlay.Name = "chkAutoPlay";
+            this.chkAutoPlay.Size = new System.Drawing.Size(71, 17);
+            this.chkAutoPlay.TabIndex = 13;
+            this.chkAutoPlay.Text = "Auto Play";
+            this.chkAutoPlay.UseVisualStyleBackColor = true;
+            this.chkAutoPlay.CheckedChanged += new System.EventHandler(this.chkAutoPlay_CheckedChanged);
             // 
             // label4
             // 
@@ -243,7 +261,8 @@
             // 
             // txtSeed
             // 
-            this.txtSeed.Location = new System.Drawing.Point(652, 433);
+            this.txtSeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSeed.Location = new System.Drawing.Point(630, 434);
             this.txtSeed.Name = "txtSeed";
             this.txtSeed.Size = new System.Drawing.Size(40, 20);
             this.txtSeed.TabIndex = 13;
@@ -251,30 +270,20 @@
             // 
             // SEED
             // 
+            this.SEED.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SEED.AutoSize = true;
-            this.SEED.Location = new System.Drawing.Point(610, 436);
+            this.SEED.Location = new System.Drawing.Point(588, 437);
             this.SEED.Name = "SEED";
             this.SEED.Size = new System.Drawing.Size(36, 13);
             this.SEED.TabIndex = 13;
             this.SEED.Text = "SEED";
-            // 
-            // chkAutoPlay
-            // 
-            this.chkAutoPlay.AutoSize = true;
-            this.chkAutoPlay.Location = new System.Drawing.Point(82, 19);
-            this.chkAutoPlay.Name = "chkAutoPlay";
-            this.chkAutoPlay.Size = new System.Drawing.Size(71, 17);
-            this.chkAutoPlay.TabIndex = 13;
-            this.chkAutoPlay.Text = "Auto Play";
-            this.chkAutoPlay.UseVisualStyleBackColor = true;
-            this.chkAutoPlay.CheckedChanged += new System.EventHandler(this.chkAutoPlay_CheckedChanged);
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(785, 465);
+            this.ClientSize = new System.Drawing.Size(763, 466);
             this.Controls.Add(this.SEED);
             this.Controls.Add(this.txtSeed);
             this.Controls.Add(this.groupBox2);
