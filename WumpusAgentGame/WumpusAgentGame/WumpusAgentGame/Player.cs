@@ -253,7 +253,7 @@ namespace WumpusAgentGame
                     Speed.X = PLAYER_SPEED;
                     Direction.X = MOVE_LEFT;
 					// dmc
-					if (Position.X < 0)
+					if (Position.X < 1)
 					{
 						CurrentState = State.Walking;
 						playerLog.Add("Player attempted to move LEFT but couldn't");
