@@ -12,8 +12,7 @@ For help setting up Git on Windows, see http://help.github.com/win-set-up-git/
 
 ======================================================================================
 
-This version includes a draft of an agent that successfully uses a A* search
-to get from the starting point to a given exit 5 tiles up and to the right.
+This version includes the very beginnings of an attempt at an autonmous agent.
 
-It calculates the path, but it needs to be updated so it will only display 
-a step at a time.
+It needs to be modified to conduct a D* search and display a step at a time.
+
