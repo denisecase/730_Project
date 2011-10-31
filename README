@@ -12,7 +12,7 @@ For help setting up Git on Windows, see http://help.github.com/win-set-up-git/
 
 ======================================================================================
 
-This version includes the very beginnings of an attempt at an autonmous agent.
+This version includes an initial attempt at an autonmous agent.
 
 It needs to be modified to conduct a D* search and display a step at a time.
 
